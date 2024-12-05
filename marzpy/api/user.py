@@ -137,7 +137,7 @@ class UserMethods:
         request = send_request(f"user/{user_username}/revoke_sub", token, "post")
         return User(**request)
     
-    def get_all_users(self, token: dict, username=None, status=None):
+    def get_all_users(self, token: dict, username=None, status=None, search=None):
         """get all users list.
 
         Parameters:
@@ -149,6 +149,11 @@ class UserMethods:
         endpoint = "users"
         if username:
             endpoint += f"?username={username}"
+        if search:
+            if "?" in endpoint:
+                endpoint += f"&search={status}"
+            else:
+                endpoint += f"?search={search}"
         if status:
             if "?" in endpoint:
                 endpoint += f"&status={status}"
