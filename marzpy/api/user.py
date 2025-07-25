@@ -29,6 +29,7 @@ class User:
         sub_last_user_agent:str = "",
         admin="",
         auto_delete_in_days = None
+        next_plan = None
     ):
         self.username = username
         self.proxies = proxies
@@ -51,6 +52,7 @@ class User:
         self.sub_updated_at = sub_updated_at
         self.admin = admin,
         self.auto_delete_in_days = auto_delete_in_days
+        self.next_plan = next_plan
 class UserMethods:
     def add_user(self, user: User, token: dict):
         """add new user.
