@@ -50,8 +50,8 @@ class User:
         self.sub_last_user_agent = sub_last_user_agent
         self.online_at = online_at
         self.sub_updated_at = sub_updated_at
-        self.admin = admin,
-        self.auto_delete_in_days = auto_delete_in_days,
+        self.admin = admin
+        self.auto_delete_in_days = auto_delete_in_days
         self.next_plan = next_plan
 class UserMethods:
     def add_user(self, user: User, token: dict):
